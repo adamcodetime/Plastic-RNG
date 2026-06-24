@@ -9,8 +9,12 @@ const item_name = document.getElementById("item_name");
 const item_rarity = document.getElementById("item_rarity");
 const item_value = document.getElementById("item_value");
 
-let money = 0;
+const MONEY_STORAGE_KEY = "plastic_tide_money";
+
+let money = loadMoney();
 let rolling = false;
+
+money_total.textContent = `$${money}`;
 
 function roll() {
     if (rolling) return;
@@ -41,10 +45,20 @@ function roll() {
         item_rarity.className = plastic.rarity.toLowerCase();
         item_value.textContent = `$${plastic.value}`;
         money_total.textContent = `$${money}`;
+        saveMoney();
 
         rolling = false;
         roll_button.disabled = false;
     }, 1500);
+}
+
+function loadMoney() {
+    const savedMoney = Number(window.localStorage.getItem(MONEY_STORAGE_KEY));
+    return Number.isFinite(savedMoney) && savedMoney >= 0 ? savedMoney : 0;
+}
+
+function saveMoney() {
+    window.localStorage.setItem(MONEY_STORAGE_KEY, String(money));
 }
 
 function getWeightedPlastic() {

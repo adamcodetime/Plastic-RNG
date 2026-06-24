@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Ocean Plastic RNG</title>
+</head>
+<body>
+    <main class="game">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Ocean cleanup roll</p>
+                <h1>Plastic Tide RNG</h1>
+            </div>
+            <div class="wallet">
+                <span>Total</span>
+                <strong id="money_total">$0</strong>
+            </div>
+        </header>
+
+        <section class="ocean-stage">
+            <div class="sun"></div>
+            <div class="wave wave-one"></div>
+            <div class="wave wave-two"></div>
+            <div class="bubbles">
+                <i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <div class="plastic-card">
+                <div id="sprite" class="plastic-sprite mystery"></div>
+                <div class="item-info">
+                    <strong id="item_name">Ocean Drift</strong>
+                    <span id="item_rarity">Ready</span>
+                    <em id="item_value">$0</em>
+                </div>
+            </div>
+        </section>
+
+        <section class="controls">
+            <span id="roll_result" class="result">Roll once to collect plastic money</span>
+            <span id="splash" class="splash">+$0</span>
+            <button id="roll_button" class="roll" onclick="roll()">ROLL</button>
+        </section>
+
+        <section class="rarities" aria-label="Plastic rarities">
+            <div class="common"><span>Common</span><strong>$5</strong></div>
+            <div class="uncommon"><span>Uncommon</span><strong>$18</strong></div>
+            <div class="rare"><span>Rare</span><strong>$65</strong></div>
+            <div class="epic"><span>Epic</span><strong>$240</strong></div>
+            <div class="legendary"><span>Legendary</span><strong>$1000</strong></div>
+        </section>
+    </main>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -13,9 +13,12 @@
                 <p class="eyebrow">Ocean cleanup roll</p>
                 <h1>Plastic Tide RNG</h1>
             </div>
-            <div class="wallet">
-                <span>Total</span>
-                <strong id="money_total">$0</strong>
+            <div class="header-actions">
+                <div class="wallet">
+                    <span>Total</span>
+                    <strong id="money_total">$0</strong>
+                </div>
+                <button id="settings_open" class="settings-open" type="button" aria-label="Open settings">⚙</button>
             </div>
         </header>
 
@@ -26,6 +29,12 @@
             <div class="bubbles">
                 <i></i><i></i><i></i><i></i><i></i>
             </div>
+            <button id="robot_boost" class="robot-boost" type="button" aria-label="Activate rarity robot">
+                <span class="robot-sprite">
+                    <i class="robot-eye left"></i>
+                    <i class="robot-eye right"></i>
+                </span>
+            </button>
             <div class="plastic-card">
                 <div id="sprite" class="plastic-sprite mystery"></div>
                 <div class="item-info">
@@ -38,6 +47,7 @@
 
         <section class="controls">
             <span id="roll_result" class="result">Roll once to collect plastic money</span>
+            <span id="boost_status" class="boost-status">Boost ready</span>
             <span id="splash" class="splash">+$0</span>
             <button id="roll_button" class="roll" onclick="roll()">ROLL</button>
         </section>
@@ -51,6 +61,49 @@
         </section>
     </main>
 
+    <button id="tax_payer" class="tax-payer" type="button" aria-label="Stop tax payer">
+        <span class="tax-sprite">
+            <i class="tax-eye left"></i>
+            <i class="tax-eye right"></i>
+            <b>$</b>
+        </span>
+        <em id="tax_hits">4</em>
+    </button>
+
+    <div id="tutorial_popup" class="tutorial-popup" role="dialog" aria-modal="true" aria-labelledby="tutorial_title">
+        <div class="tutorial-panel">
+            <h2 id="tutorial_title">How to play</h2>
+            <p>Press ROLL to pull plastic from the ocean and earn money for the item you find.</p>
+            <p>Every five minutes, either the robot or the tax payer appears. Click the robot before it leaves to start Frenzy.</p>
+            <p>During Frenzy, the gold glow means your rolls have much better odds for Epic and Legendary plastic.</p>
+            <p>If the tax payer appears, click him four times before he reaches your wallet or he steals money.</p>
+            <button id="tutorial_close" type="button">Got it</button>
+        </div>
+    </div>
+
+    <div id="settings_popup" class="settings-popup hidden" role="dialog" aria-modal="true" aria-labelledby="settings_title">
+        <div class="settings-panel">
+            <div class="settings-head">
+                <h2 id="settings_title">Settings</h2>
+                <button id="settings_close" class="settings-close" type="button" aria-label="Close settings">×</button>
+            </div>
+            <button id="mute_toggle" class="settings-action" type="button">Mute game</button>
+            <button id="reset_account" class="settings-action danger" type="button">Reset money</button>
+        </div>
+    </div>
+
+    <audio id="roll_sound" preload="auto">
+        <source src="roll.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="rarity_sound" preload="auto">
+        <source src="rarity.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="tax_sound" preload="auto" loop>
+        <source src="tax.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="robot_sound" preload="auto" loop>
+        <source src="robot.mp3" type="audio/mpeg">
+    </audio>
     <script type="module" src="main.js"></script>
 </body>
 </html>

@@ -31,7 +31,7 @@ export const plastic_rng = [
         name: "Ghost Crate",
         rarity: "Legendary",
         value: 1000,
-        weight: 2,
+        weight: 1.5,
         sprite: "crate"
     }
 ];

@@ -28,7 +28,7 @@ const tax_hits = document.getElementById("tax_hits");
 
 const MONEY_STORAGE_KEY = "plastic_tide_money";
 const MUTE_STORAGE_KEY = "plastic_tide_muted";
-const EVENT_SPAWN_MS = 300000;
+const EVENT_SPAWN_MS = 60000;
 const ROBOT_DESPAWN_MS = 15000;
 const ROBOT_BOOST_DURATION_MS = 15000;
 const ROBOT_BOOST_POWER = 10;
@@ -92,7 +92,7 @@ function roll() {
     item_name.className = "";
     item_rarity.textContent = "Rolling...";
     item_rarity.className = "";
-    item_value.textContent = "1.5s";
+    item_value.textContent = "1";
 
     window.setTimeout(() => {
         const plastic = getWeightedPlastic();
@@ -113,7 +113,7 @@ function roll() {
 
         rolling = false;
         roll_button.disabled = false;
-    }, 1500);
+    }, 1000);
 }
 
 function loadMoney() {

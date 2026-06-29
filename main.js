@@ -92,7 +92,7 @@ function roll() {
     item_name.className = "";
     item_rarity.textContent = "Rolling...";
     item_rarity.className = "";
-    item_value.textContent = "1";
+    item_value.textContent = "0.5s";
 
     window.setTimeout(() => {
         const plastic = getWeightedPlastic();
@@ -113,7 +113,7 @@ function roll() {
 
         rolling = false;
         roll_button.disabled = false;
-    }, 1000);
+    }, 500);
 }
 
 function loadMoney() {

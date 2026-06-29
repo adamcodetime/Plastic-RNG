@@ -35,8 +35,8 @@ const ROBOT_BOOST_POWER = 10;
 const FRENZY_BOOST_POWER = 10;
 const ROBOT_FLEE_RADIUS = 120;
 const ROBOT_FLEE_STEP = 34;
-const TAX_HITS_REQUIRED = 4;
-const TAX_TRAVEL_MS = 12000;
+const TAX_HITS_REQUIRED = 10;
+const TAX_TRAVEL_MS = 8000;
 const FRENZY_WEIGHTS = {
     Common: 3,
     Uncommon: 7,
